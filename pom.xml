@@ -20,8 +20,22 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                 <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                 </descriptorRefs>
+                 <archive>
+                   <manifest>
+                     <mainClass>fully.qualified.MainClass</mainClass>
+                   </manifest>
+                 </archive>
+                </configuration>
+             </plugin>
         </plugins>
     </build>
+    
     <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
