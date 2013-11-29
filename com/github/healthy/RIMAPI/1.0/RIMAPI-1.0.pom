@@ -3,20 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.healthy</groupId>
-    <artifactId>EntityAPI</artifactId>
-    <version>1.1</version>
+    <artifactId>RIMAPI</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>EntityAPI</name>
+    <name>RIMAPI</name>
     <url>http://maven.apache.org</url>
-      
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <github.global.server>github</github.global.server>
-        <github.global.repositoryName>mvn-repo</github.global.repositoryName>
-        <github.global.repositoryOwner>ccardoso</github.global.repositoryOwner>        
-    </properties>
-    
     <build>
         <plugins>
             <plugin>
@@ -53,26 +45,26 @@
                     </execution>
                 </executions>
             </plugin>
-        
-        
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>fully.qualified.MainClass</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-  
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github</github.global.server>
+        <github.global.repositoryName>mvn-repo</github.global.repositoryName>
+        <github.global.repositoryOwner>ccardoso</github.global.repositoryOwner>
+    </properties>
 
-    <distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+        <distributionManagement>
         <repository>
             <id>internal.repo</id>
             <url>file://${project.build.directory}/mvn-repo</url>
