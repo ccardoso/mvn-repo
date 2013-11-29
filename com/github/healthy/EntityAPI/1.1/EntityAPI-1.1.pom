@@ -12,10 +12,9 @@
       
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-         <github.global.server>github</github.global.server>
-         <github.global.repositoryName>mvn-repo</github.global.repositoryName>
-         <github.global.repositoryOwner>ccardoso</github.global.repositoryOwner>
-         
+        <github.global.server>github</github.global.server>
+        <github.global.repositoryName>mvn-repo</github.global.repositoryName>
+        <github.global.repositoryOwner>ccardoso</github.global.repositoryOwner>        
     </properties>
     
     <build>
@@ -38,19 +37,21 @@
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-                    <includes><include>**/*</include></includes>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
                     <repositoryName>mvn-repo</repositoryName>      <!-- github repo name -->
                     <repositoryOwner>ccardoso</repositoryOwner>    <!-- github username  -->
                 </configuration>
                 <executions>
-                  <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
-                  <execution>
-                    <goals>
-                      <goal>site</goal>
-                    </goals>
-                    <phase>deploy</phase>
-                   </execution>
-                  </executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
             </plugin>
         
         
@@ -72,7 +73,7 @@
   
 
     <distributionManagement>
-       <repository>
+        <repository>
             <id>internal.repo</id>
             <url>file://${project.build.directory}/mvn-repo</url>
             <name>Temporary local mvn-repo</name>
